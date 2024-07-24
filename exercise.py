@@ -37,11 +37,19 @@ print_greeting()
 # - Utilize the `in` operator to check for vowels.
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
-def check_letter():
-    # Your control flow logic goes here
-  
-# Call the function
-check_letter()
+# def check_letter():
+#     # Your control flow logic goes here
+#   glyph = input('Please enter a letter from the alphabet: ')
+#   vowels = 'aeiouAEIOU'
+#   if len(glyph) == 1 and glyph.isalpha():
+#      if glyph in vowels:
+#       print(f'The letter {glyph} is a vowel.') 
+#      else: 
+#       print(f'The letter {glyph} is a consonant')
+#   else:
+#     print('Sorry that is not valid. Single letters only')
+# # Call the function
+# check_letter()
 
 
 # Exercise 2: Old enough to vote?
@@ -60,11 +68,16 @@ check_letter()
 # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
-def check_voting_eligibility():
-    # Your control flow logic goes here
-
-# Call the function
-check_voting_eligibility()
+# def check_voting_eligibility():
+#     # Your control flow logic goes here
+#   voting_age = input('Input your age here: ')
+#   if voting_age.isdigit():
+#     age = int(voting_age)
+#     voting_age = print('Congrats you are old enough to vote') if age >= 18  else print('Sorry you are underage try again next year')    
+#   else:
+#     print('Please enter a valid number for age requirement')
+# # Call the function
+# check_voting_eligibility()
 
 
 # Exercise 3: Calculate Dog Years
@@ -87,6 +100,16 @@ check_voting_eligibility()
 
 def calculate_dog_years():
     # Your control flow logic goes here
+  doggo_span = int(input("Please place your pup's age in human years for calculations: "))
+  if doggo_span < 0:
+        print('Must be a year old or older')
+  else:
+    dog_epoch = doggo_span
+    if doggo_span <= 2:
+        dog_epoch = doggo_span * 10
+    else:
+        dog_epoch = 20 + (doggo_span - 2) * 7
+    print(f"Doggo's life span is {dog_epoch} in Dog years!")
 
 # Call the function
 calculate_dog_years()
@@ -110,7 +133,16 @@ calculate_dog_years()
 
 def weather_advice():
     # Your control flow logic goes here
-
+    is_cold = input("Is it cold (yes/no)? ")
+    is_raining = input("Is it raining (yes/no)? ")
+    if is_cold == "yes" and is_raining == "yes":
+        print("Wear a waterproof coat.")
+    elif is_cold == "yes" and is_raining == "no":
+        print("Wear a warm coat.")
+    elif is_cold == "no" and is_raining == "yes":
+        print("Carry an umbrella.")
+    else:
+        print("Wear light clothing.")
 # Call the function
 weather_advice()
 
@@ -136,6 +168,29 @@ weather_advice()
 
 def determine_season():
     # Your control flow logic goes here
+    month = input("Enter the month of the year (Jan - Dec): ")
+    day = int(input("Enter the day of the month: "))
+    valid_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    if month in valid_months and 1 <= day <= 31:
+        if month == 'Dec' and day >= 21 or month == 'Mar' and day <= 19:
+            season = 'Winter'
+        elif month == 'Jan' or month == 'Feb':
+            season = 'Winter'
+        elif month == 'Mar' and day >= 20 or month == 'Jun' and day <= 20:
+            season = 'Spring'
+        elif month == 'Apr' or month == 'May':
+            season = 'Spring'
+        elif month == 'Jun' and day >= 21 or month == 'Sep' and day <= 21:
+            season = 'Summer'
+        elif month == 'Jul' or month == 'Aug':
+            season = 'Summer'
+        elif month == 'Sep' and day >= 22 or month == 'Dec' and day <= 20:
+            season = 'Fall'
+        elif month == 'Oct' or month == 'Nov':
+            season = 'Fall'
+        print(f"{month} {day} is in {season}.")
+    else:
+        print("Invalid entry. Please enter a valid month and day.")
 
 # Call the function
 determine_season()
